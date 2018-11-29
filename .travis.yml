@@ -1,6 +1,6 @@
-os:
-  - linux
-  - osx
+# os:
+#   - linux
+#   - osx
 language: generic
 sudo: required
 dist: trusty
@@ -8,15 +8,26 @@ dist: trusty
 
 matrix:
   include:
-    - osx_image: xcode9.4 
+    - os: osx
+      osx_image: xcode9.4 
       env: MONGODB_VERSION=3.6.5 SWIFT_VERSION=4.0
-    - osx_image: xcode10.1
+    - os: osx
+      osx_image: xcode10.1
       env: MONGODB_VERSION=3.6.5 SWIFT_VERSION=4.0
-    - osx_image: xcode9.4
+    - os: osx
+      osx_image: xcode9.4
       env: MONGODB_VERSION=3.6.5 SWIFT_VERSION=4.1
-    - osx_image: xcode10.1
+    - os: osx
+      osx_image: xcode10.1
       env: MONGODB_VERSION=3.6.5 SWIFT_VERSION=4.1
-    - osx_image: xcode10.1
+    - os: osx
+      osx_image: xcode10.1
+      env: MONGODB_VERSION=3.6.5 SWIFT_VERSION=4.2
+    - os: linux
+      env: MONGODB_VERSION=3.6.5 SWIFT_VERSION=4.0
+    - os: linux
+      env: MONGODB_VERSION=3.6.5 SWIFT_VERSION=4.1
+    - os: linux
       env: MONGODB_VERSION=3.6.5 SWIFT_VERSION=4.2
 
 # env:
